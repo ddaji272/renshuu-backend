@@ -16,15 +16,20 @@ const upload = multer({
   // ensure only images and audio files are uploaded
   fileFilter: (req, file, cb) => {
     const allowed = [
-      "image/png",
-      "image/jpeg",
-      "image/webp",
-      "audio/mpeg",
-      "audio/mp3",
-      "audio/wav",
-      "application/octet-stream", // for ai generated files
-      "audio/x-m4a",      // thêm
-    ];
+  "image/png",
+  "image/jpeg",
+  "image/webp",
+  "audio/mpeg",
+  "audio/mp3",
+  "audio/wav",
+  "audio/mp4",        // thêm
+  "audio/aac",        // thêm
+  "audio/ogg",        // thêm
+  "audio/flac",       // thêm
+  "audio/x-wav",      // thêm
+  "audio/x-m4a",      // thêm
+  "application/octet-stream",
+];
     if (!allowed.includes(file.mimetype)) {
       return cb(new Error("File type not allowed"), false);
     }

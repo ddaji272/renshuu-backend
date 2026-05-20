@@ -23,6 +23,7 @@ const upload = multer({
       "audio/mp3",
       "audio/wav",
       "application/octet-stream", // for ai generated files
+      "audio/x-m4a",      // thêm
     ];
     if (!allowed.includes(file.mimetype)) {
       return cb(new Error("File type not allowed"), false);
